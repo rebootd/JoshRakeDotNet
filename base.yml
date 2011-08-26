@@ -1,0 +1,19 @@
+# usage: 
+#  config = YAML.load_file("config.yaml")
+#  @dbserver = config["development"]["dbserver"]
+
+development:
+ dbserver: ./sqlexpress
+ db: none
+ username: applogin
+ password: somepassword
+ destination: \\some\unc\path
+ nunit_cmd: 
+ nunit_asm: 
+ migration_cmd: 
+ migration_asm: 
+ migration_conn: 
+ sln_file: 
+ backup_sql: 
+ backup_web: 
+

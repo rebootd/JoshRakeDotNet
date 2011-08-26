@@ -1,0 +1,50 @@
+# usage: 
+#  config = YAML.load_file("config.yaml")
+#  @dbserver = config["development"]["dbserver"]
+#
+# NOTE:
+# because sql only runs backups on local drives, have to have a setting for the network path
+
+global:
+ buildenv: ../BuildTools/
+ output: build/
+ sln_file: .\src\Example.sln
+ nunit_cmd: src/packages/NUnit.2.5.9.10348/Tools/nunit-console.exe
+ nunit_asm: build/ExampleTests.dll
+ nunit_output: Example-results.xml
+ migration_cmd: lib/FluentMigrator/Migrate.exe
+ migration_asm: build/Example.Migrations.dll
+ project_name: Example
+
+development:
+ dbserver: ./sqlexpress
+ db: Example
+ username: Exampleapp
+ password: somepassword
+ destination: .\deployed\
+ migration_conn: server=.\\SQLExpress;database=Example;trusted_connection=true
+ backup_sql: d:\dev\backups\
+ backup_sql_unc: \\localhost\d$\dev\backups
+ backup_web: d:\dev\backups\
+
+staging:
+ dbserver: SomeServer
+ db: Exampledev
+ username: ExampleDev
+ password: SomePassword
+ destination: \\Server\ShareFolder\WebsiteFolder
+ migration_conn: server=SqlServer;database=Exampledev;user id=ExampleDev;password=SomePassword
+ backup_sql: e:\backups\
+ backup_sql_unc: \\SomeServer\backups
+ backup_web: \\SomeServer\Backups
+
+production:
+ dbserver: SomeServer
+ db: SomeDB
+ username: TheUser
+ password: HisPassword
+ destination: \\SomeServer\c$\Websites\WebsiteFolder
+ migration_conn: server=SomeServer;database=SomeDB;user id=TheUser;password=HisPassword
+ backup_sql: c:\backups\
+ backup_sql_unc: \\SomeServer\c$\backups
+ backup_web: \\SomeServer\c$\Backups

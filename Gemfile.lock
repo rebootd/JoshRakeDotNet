@@ -1,0 +1,17 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    albacore (0.2.7)
+      rubyzip (~> 0.9)
+    open4 (1.1.0)
+    open5 (0.2)
+      open4
+    rubyzip (0.9.4)
+
+PLATFORMS
+  x86-mingw32
+
+DEPENDENCIES
+  albacore (~> 0.2.7)
+  open5 (~> 0.2)
+  rubyzip (~> 0.9.4)
