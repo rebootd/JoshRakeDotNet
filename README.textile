@@ -1,6 +1,8 @@
 h1. Josh Rake .Net 
 
-This is the basic, common set of rake tasks and RUby code which I'm using to build and deploy .Net applications using Jenkins-CI. 
+This is the basic, common set of rake tasks and Ruby code which I'm using to build and deploy .Net applications using Jenkins-CI. 
 The apps are mostly asp.net or asp.net mvc3 site, so the code is generally suited for those along with my standard approach to development. 
-Meaning it targets FluentMigrator for schema migrations, nunit for tests because JenkinsCI supported reading the nunit results format, and making backups along with deployment.
+Meaning it targets FluentMigrator for schema migrations, nunit for tests because JenkinsCI supported reading the nunit results format, 
+and making backups along with deployment.
 
+h2. more to come.. support for nuget packages..
